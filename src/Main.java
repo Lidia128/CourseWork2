@@ -3,10 +3,12 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.Scanner;
+
 public class Main {
     private final static DateTimeFormatter TASK_DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern("dd.MM.yyyy HH.mm");
     private final static DateTimeFormatter FORMAT = DateTimeFormatter.ofPattern("dd.MM.yyyy");
     private final static Service<Task> service = new Service<>();
+
     public static void main(String[] args) {
 
         try (Scanner scanner = new Scanner(System.in)) {
@@ -45,6 +47,7 @@ public class Main {
         }
         printInfo();
     }
+
     private static void inputTask(Scanner scanner) {
         String taskName = readString("Введите название задачи", scanner);
         System.out.print("Введите кратность задачи: ");
@@ -71,6 +74,7 @@ public class Main {
                 break;
         }
     }
+
     private static void printInfo() {
         System.out.println(
                 """
@@ -82,6 +86,7 @@ public class Main {
                         """
         );
     }
+
     public static TaskType readTaskType(Scanner scanner) {
         System.out.println("Выберите вид задачи\n1. Личная \n2. Рабочая");
         while (true) {
@@ -101,6 +106,7 @@ public class Main {
             }
         }
     }
+
     public static RepeatType readTaskRepeatType(Scanner scanner) {
         System.out.println("Кратность задачи\n1. Один раз \n2. Ежедневно \n3. Еженедельно \n4. Ежемесячно \n5. Ежегодно");
         while (true) {
@@ -126,6 +132,7 @@ public class Main {
             }
         }
     }
+
     public static LocalDateTime readTaskDate(Scanner scanner) {
         while (true) {
             try {
@@ -137,6 +144,7 @@ public class Main {
             }
         }
     }
+
     public static String readString(String message, Scanner scanner) {
         while (true) {
             try {

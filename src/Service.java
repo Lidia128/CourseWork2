@@ -3,10 +3,15 @@ import java.util.*;
 
 public class Service<T extends Task> {
     Map<Integer, Task> tasks = new HashMap<>();
+
     public void addTask(Task task) {
-        tasks.put(task.getId(), task);}
+        tasks.put(task.getId(), task);
+    }
+
     public void printTasks() {
-        System.out.println(tasks);}
+        System.out.println(tasks);
+    }
+
     public void removeTask(String taskName) {
         for (Task value : tasks.values()) {
             int i = 0;
@@ -16,6 +21,7 @@ public class Service<T extends Task> {
             tasks.remove(i);
         }
     }
+
     Collection<Task> getTasksForDay(LocalDate localDate) {
         List<Task> tasksForDay = new ArrayList<>();
         for (Task task : tasks.values()) {

@@ -6,6 +6,7 @@ public class YearTask extends Task {
         super(name, action, type, date, repeatType);
         this.repeatType = RepeatType.YEAR;
     }
+
     @Override
     public boolean appearsIn(LocalDate localDate) {
         return this.date.toLocalDate().equals(localDate) || this.date.toLocalDate().isBefore(localDate) &&
